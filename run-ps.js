@@ -2,6 +2,9 @@ var spawn = require("child_process").spawn,child;
 var workspace = process.env.GITHUB_WORKSPACE;
 var file = workspace + "\\test.ps1";
 console.log( "Workspace ", workspace,  " file ", file );
+
+listTree(root);
+
 child = spawn("powershell.exe",['-NoProfile', '-File ', file]);
 
 child.stdout.on("data",function(data){
@@ -17,3 +20,13 @@ child.on("exit",function(){
 });
 
 child.stdin.end(); //end input
+
+function listTree(root) {
+  print(root);
+  if (root.isDirectory()) {
+    root.getFiles().forEach(function(file) {
+      listTree(file);
+    });
+  }
+}
+
