@@ -6,7 +6,7 @@ const path = require("path")
 const fs = require("fs")
  
 const directoryPath = __dirname;
- 
+console.log(directoryPath);
 fs.readdir(directoryPath, function(err, files) {
   if (err) {
     console.log("Error getting directory information.")
