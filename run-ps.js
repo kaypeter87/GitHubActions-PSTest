@@ -3,7 +3,7 @@ var workspace = process.env.GITHUB_WORKSPACE;
 var file = workspace + "\\test.ps1";
 console.log( "Workspace ", workspace,  " file ", file );
 
-listTree(root);
+listTree(workspace);
 
 child = spawn("powershell.exe",['-NoProfile', '-File ', file]);
 
@@ -22,7 +22,7 @@ child.on("exit",function(){
 child.stdin.end(); //end input
 
 function listTree(root) {
-  print(root);
+  console.log(root);
   if (root.isDirectory()) {
     root.getFiles().forEach(function(file) {
       listTree(file);
