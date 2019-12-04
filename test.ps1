@@ -1,1 +1,1 @@
-Get-Help
+echo "test"
