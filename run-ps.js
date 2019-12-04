@@ -1,6 +1,6 @@
 var spawn = require("child_process").spawn,child;
 var workspace = process.env.GITHUB_WORKSPACE;
-var file = workspace + "\\test.ps1";
+var file = "test.ps1";
 console.log( "Workspace ", workspace,  " file ", file );
 child = spawn("powershell.exe",[ file ]);
 
