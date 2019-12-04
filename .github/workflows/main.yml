@@ -1,0 +1,9 @@
+name: "test"
+on: [push]
+
+jobs:
+  upgrade:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: kaypeter87/GitHubActions-PSTest@master
