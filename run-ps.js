@@ -1,6 +1,4 @@
-var spawn = require("child_process").spawn,child;
-var workspace = process.env.GITHUB_WORKSPACE;
-var file = workspace + "\\test.ps1";
+
 
 const path = require("path")
 const fs = require("fs")
@@ -17,6 +15,10 @@ fs.readdir(directoryPath, function(err, files) {
     })
   }
 })
+
+var spawn = require("child_process").spawn,child;
+var workspace = process.env.GITHUB_WORKSPACE;
+var file = directoryPath + "\\test.ps1";
 
 child = spawn("powershell.exe",['-NoProfile', '-File ', file]);
 
