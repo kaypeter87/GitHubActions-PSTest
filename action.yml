@@ -2,5 +2,5 @@ name: 'test for windows'
 description: 'tester'
 author: 'kaypeter87'
 runs:
-  using: 'windows-latest'
+  using: 'docker'
   main: 'test.ps1'
