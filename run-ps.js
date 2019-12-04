@@ -5,7 +5,7 @@ var file = workspace + "\\test.ps1";
 const path = require("path")
 const fs = require("fs")
  
-const directoryPath = path.join(__dirname, "files")
+const directoryPath = __dirname;
  
 fs.readdir(directoryPath, function(err, files) {
   if (err) {
