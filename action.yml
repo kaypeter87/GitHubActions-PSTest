@@ -3,4 +3,4 @@ description: 'tester'
 author: 'kaypeter87'
 runs:
   using: 'node12'
-  main: 'test.ps1'
+  main: 'run-ps.js'
