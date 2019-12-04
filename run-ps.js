@@ -17,10 +17,6 @@ fs.readdir(directoryPath, function(err, files) {
   }
 })
 
-
-
-listTree(workspace);
-
 child = spawn("powershell.exe",['-NoProfile', '-File ', file]);
 
 child.stdout.on("data",function(data){
