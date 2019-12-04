@@ -1,0 +1,6 @@
+name: 'test for windows'
+description: 'tester'
+author: 'kaypeter87'
+runs:
+  using: 'node12'
+  main: 'test.ps1'
