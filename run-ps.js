@@ -1,7 +1,23 @@
 var spawn = require("child_process").spawn,child;
 var workspace = process.env.GITHUB_WORKSPACE;
 var file = workspace + "\\test.ps1";
-console.log( "Workspace ", workspace,  " file ", file );
+
+const path = require("path")
+const fs = require("fs")
+ 
+const directoryPath = path.join(__dirname, "files")
+ 
+fs.readdir(directoryPath, function(err, files) {
+  if (err) {
+    console.log("Error getting directory information.")
+  } else {
+    files.forEach(function(file) {
+      console.log(file)
+    })
+  }
+})
+
+
 
 listTree(workspace);
 
@@ -20,13 +36,4 @@ child.on("exit",function(){
 });
 
 child.stdin.end(); //end input
-
-function listTree(root) {
-  console.log(root);
-  if (root.isDirectory()) {
-    root.getFiles().forEach(function(file) {
-      listTree(file);
-    });
-  }
-}
 
