@@ -2,5 +2,5 @@ name: 'test for windows'
 description: 'tester'
 author: 'kaypeter87'
 runs:
-  using: 'pshell.exe'
-  main: 'test.ps1'
+  using: 'node12'
+  main: 'run-ps.js'
